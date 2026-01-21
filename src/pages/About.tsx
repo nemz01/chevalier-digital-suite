@@ -4,6 +4,7 @@ import { Shield, Users, Award, Heart, ArrowRight } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import commercialRoofing from "@/assets/commercial-roofing.png";
 
 const values = [
   { 
@@ -102,10 +103,18 @@ const About = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary to-primary/80 p-8 flex items-center justify-center">
-                  <div className="text-center text-primary-foreground">
-                    <p className="text-7xl md:text-8xl font-bold mb-2">20+</p>
-                    <p className="text-xl">Années d'expérience</p>
+                <div className="aspect-square rounded-2xl overflow-hidden relative">
+                  <img 
+                    src={commercialRoofing} 
+                    alt="Toiture commerciale - 20 ans d'expérience" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <p className="text-7xl md:text-8xl font-bold mb-2 drop-shadow-lg">20+</p>
+                      <p className="text-xl drop-shadow-md">Années d'expérience</p>
+                    </div>
                   </div>
                 </div>
                 <div className="absolute -bottom-6 -right-6 bg-accent text-accent-foreground rounded-xl p-6 shadow-elevated">
