@@ -7,13 +7,15 @@ import heroImage from "@/assets/hero-roofing.jpg";
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-32">
-      {/* Background Image */}
+      {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
           alt="Équipe de couvreurs professionnels au travail"
           className="w-full h-full object-cover"
         />
+        {/* Dark gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
       </div>
 
       {/* Content */}
