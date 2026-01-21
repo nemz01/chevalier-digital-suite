@@ -14,7 +14,171 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      communications: {
+        Row: {
+          content: string | null
+          created_at: string
+          created_by: string | null
+          direction: string | null
+          id: string
+          lead_id: string
+          subject: string | null
+          type: string
+        }
+        Insert: {
+          content?: string | null
+          created_at?: string
+          created_by?: string | null
+          direction?: string | null
+          id?: string
+          lead_id: string
+          subject?: string | null
+          type: string
+        }
+        Update: {
+          content?: string | null
+          created_at?: string
+          created_by?: string | null
+          direction?: string | null
+          id?: string
+          lead_id?: string
+          subject?: string | null
+          type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "communications_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "communications_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      leads: {
+        Row: {
+          access_difficulty: string | null
+          address: string
+          ai_analysis: Json | null
+          best_time_to_call: string | null
+          budget_range: string | null
+          confidence_score: number | null
+          created_at: string
+          email: string
+          estimate_high: number | null
+          estimate_low: number | null
+          estimate_mid: number | null
+          estimate_timeline: string | null
+          full_name: string
+          id: string
+          notes: string | null
+          phone: string
+          photos: string[] | null
+          project_type: string
+          property_type: string | null
+          roof_age: string | null
+          roof_issues: Json | null
+          roof_type: string | null
+          source: string | null
+          status: string
+          timeline: string | null
+          updated_at: string
+          year_built: string | null
+        }
+        Insert: {
+          access_difficulty?: string | null
+          address: string
+          ai_analysis?: Json | null
+          best_time_to_call?: string | null
+          budget_range?: string | null
+          confidence_score?: number | null
+          created_at?: string
+          email: string
+          estimate_high?: number | null
+          estimate_low?: number | null
+          estimate_mid?: number | null
+          estimate_timeline?: string | null
+          full_name: string
+          id?: string
+          notes?: string | null
+          phone: string
+          photos?: string[] | null
+          project_type: string
+          property_type?: string | null
+          roof_age?: string | null
+          roof_issues?: Json | null
+          roof_type?: string | null
+          source?: string | null
+          status?: string
+          timeline?: string | null
+          updated_at?: string
+          year_built?: string | null
+        }
+        Update: {
+          access_difficulty?: string | null
+          address?: string
+          ai_analysis?: Json | null
+          best_time_to_call?: string | null
+          budget_range?: string | null
+          confidence_score?: number | null
+          created_at?: string
+          email?: string
+          estimate_high?: number | null
+          estimate_low?: number | null
+          estimate_mid?: number | null
+          estimate_timeline?: string | null
+          full_name?: string
+          id?: string
+          notes?: string | null
+          phone?: string
+          photos?: string[] | null
+          project_type?: string
+          property_type?: string | null
+          roof_age?: string | null
+          roof_issues?: Json | null
+          roof_type?: string | null
+          source?: string | null
+          status?: string
+          timeline?: string | null
+          updated_at?: string
+          year_built?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          full_name: string | null
+          id: string
+          role: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          role?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          role?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
