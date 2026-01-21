@@ -14,8 +14,8 @@ export function Hero() {
           alt="Toiture professionnelle"
           className="w-full h-full object-cover"
         />
-        {/* Dark blue gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/85 to-[#0a1628]/70" />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/40" />
       </div>
 
       {/* Content */}
@@ -126,14 +126,6 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
-
-      {/* Decorative circle element (like in Gemini design) */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="hidden lg:block absolute right-[10%] top-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm"
-      />
 
       {/* Scroll Indicator */}
       <motion.div
