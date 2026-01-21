@@ -61,7 +61,8 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8"
+            className="text-lg md:text-xl text-white font-medium max-w-2xl mx-auto mb-8"
+            style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}
           >
             Service professionnel sur la Rive-Sud, Rive-Nord et Cantons-de-l'Est. 
             Expertise reconnue, matériaux premium et travail impeccable.
@@ -87,35 +88,60 @@ export function Hero() {
           </motion.div>
 
           {/* Trust Indicators */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-3 gap-4 max-w-xl mx-auto"
-          >
-            <div className="glass rounded-lg p-4 text-center">
-              <div className="flex justify-center mb-2">
+          <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto">
+            <motion.div 
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="glass rounded-lg p-4 text-center cursor-pointer"
+            >
+              <motion.div 
+                className="flex justify-center mb-2"
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+              >
                 <Award className="h-6 w-6 text-accent" />
-              </div>
+              </motion.div>
               <p className="text-primary-foreground font-bold text-lg">20+</p>
               <p className="text-primary-foreground/70 text-xs">Années d'expérience</p>
-            </div>
-            <div className="glass rounded-lg p-4 text-center">
-              <div className="flex justify-center mb-2">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="glass rounded-lg p-4 text-center cursor-pointer"
+            >
+              <motion.div 
+                className="flex justify-center mb-2"
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+              >
                 <Shield className="h-6 w-6 text-accent" />
-              </div>
+              </motion.div>
               <p className="text-primary-foreground font-bold text-lg">500+</p>
               <p className="text-primary-foreground/70 text-xs">Projets complétés</p>
-            </div>
-            <div className="glass rounded-lg p-4 text-center">
-              <div className="flex justify-center mb-2">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="glass rounded-lg p-4 text-center cursor-pointer"
+            >
+              <motion.div 
+                className="flex justify-center mb-2"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              >
                 <Clock className="h-6 w-6 text-accent" />
-              </div>
+              </motion.div>
               <p className="text-primary-foreground font-bold text-lg">24/7</p>
               <p className="text-primary-foreground/70 text-xs">Service d'urgence</p>
-            </div>
-          </motion.div>
+            </motion.div>
         </div>
+      </div>
       </div>
 
       {/* Scroll Indicator */}
