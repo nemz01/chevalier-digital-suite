@@ -40,11 +40,11 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-6"
           >
-            <span className="block font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white uppercase tracking-tight">
-              CHEVALIER
+            <span className="block font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white uppercase tracking-tight">
+              VOTRE TOITURE
             </span>
-            <span className="block font-display text-5xl md:text-6xl lg:text-7xl font-bold text-accent uppercase tracking-tight">
-              COUVREUR
+            <span className="block font-display text-4xl md:text-5xl lg:text-6xl font-bold text-accent uppercase tracking-tight">
+              ENTRE BONNES MAINS
             </span>
           </motion.h1>
 
