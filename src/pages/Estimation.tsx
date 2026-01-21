@@ -47,7 +47,6 @@ const projectTypes = [
     icon: Building2,
     title: "Commercial",
     description: "Multi-logements, bâtiment commercial",
-    badge: "ICP FOCUS",
   },
   {
     id: "emergency" as const,
@@ -443,11 +442,6 @@ const Estimation = () => {
                             : "border-border bg-card"
                         }`}
                       >
-                        {type.badge && (
-                          <span className="absolute top-2 right-2 bg-accent text-accent-foreground text-xs font-bold px-2 py-1 rounded">
-                            {type.badge}
-                          </span>
-                        )}
                         <type.icon className="h-8 w-8 text-accent mb-4" />
                         <h3 className="font-bold text-foreground mb-1">
                           {type.title}
