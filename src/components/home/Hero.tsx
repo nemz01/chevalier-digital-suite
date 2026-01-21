@@ -34,7 +34,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl md:text-6xl lg:text-8xl font-bold text-white leading-none mb-6 uppercase tracking-wide"
+            className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 uppercase tracking-wide"
             style={{ 
               textShadow: '2px 2px 0px rgba(0,0,0,0.2), 4px 4px 0px rgba(0,0,0,0.1), 8px 8px 30px rgba(0,0,0,0.3)'
             }}
