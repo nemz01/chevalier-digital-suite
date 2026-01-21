@@ -14,7 +14,6 @@ export function Hero() {
           alt="Équipe de couvreurs professionnels au travail"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 gradient-hero" />
       </div>
 
       {/* Content */}
