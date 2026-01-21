@@ -17,7 +17,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 pt-20">
+      <div className="relative z-10 container mx-auto px-4 pt-8">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -34,13 +34,16 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6"
+            className="text-4xl md:text-5xl lg:text-7xl font-black text-primary-foreground leading-tight mb-6"
+            style={{ 
+              textShadow: '3px 3px 0px rgba(0,0,0,0.3), 6px 6px 0px rgba(0,0,0,0.15), 9px 9px 20px rgba(0,0,0,0.2)'
+            }}
           >
             <motion.span
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-block"
+              className="inline-block drop-shadow-lg"
             >
               Toitures Résidentielles &{" "}
             </motion.span>
@@ -48,7 +51,10 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.4, type: "spring", stiffness: 100 }}
-              className="inline-block text-gradient bg-gradient-to-r from-accent via-accent/80 to-accent bg-clip-text text-transparent"
+              className="inline-block text-accent"
+              style={{ 
+                textShadow: '3px 3px 0px rgba(0,153,255,0.4), 6px 6px 0px rgba(0,100,180,0.2), 9px 9px 25px rgba(0,0,0,0.3)'
+              }}
             >
               Commerciales de Confiance
             </motion.span>
