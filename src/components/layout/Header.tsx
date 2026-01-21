@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, LayoutDashboard } from "lucide-react";
@@ -6,28 +6,47 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
-  { href: "/", label: "Accueil" },
-  { href: "/services", label: "Services" },
-  { href: "/a-propos", label: "À Propos" },
-  { href: "/contact", label: "Contact" },
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/services", label: "SERVICES" },
+  { href: "/estimation", label: "RÉALISATIONS" },
+  { href: "/a-propos", label: "À PROPOS" },
+  { href: "/contact", label: "PROCESSUS" },
+  { href: "/dashboard", label: "DASHBOARD", icon: LayoutDashboard },
 ];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-md border-b border-border">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-[#0a1628]/95 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-28">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 py-2">
-            <img 
-              src={logo} 
-              alt="Chevalier Couvreur" 
-              className="h-[104px] w-auto"
+          <Link to="/" className="flex items-center gap-3 py-2">
+            <img
+              src={logo}
+              alt="Chevalier Couvreur"
+              className="h-12 w-auto"
             />
+            <div className="hidden sm:block">
+              <span className="block text-white font-bold text-lg leading-tight">CHEVALIER</span>
+              <span className="block text-white/70 text-xs tracking-widest">COUVREUR</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -36,10 +55,10 @@ export function Header() {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-sm font-medium transition-colors hover:text-accent ${
+                className={`text-sm font-medium tracking-wide transition-colors hover:text-accent ${
                   location.pathname === link.href
                     ? "text-accent"
-                    : "text-foreground"
+                    : "text-white/80"
                 }`}
               >
                 {link.label}
@@ -47,16 +66,16 @@ export function Header() {
             ))}
           </nav>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button variant="ghost" size="sm" asChild>
-              <a href="tel:+14505551234" className="flex items-center gap-2">
+            <Button
+              className="bg-accent hover:bg-accent/90 text-white font-semibold px-6"
+              asChild
+            >
+              <a href="tel:+15141234567" className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                (450) 555-1234
+                URGENCE 24/7
               </a>
-            </Button>
-            <Button variant="hero" asChild>
-              <Link to="/estimation">Estimation Gratuite</Link>
             </Button>
           </div>
 
@@ -67,9 +86,9 @@ export function Header() {
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <X className="h-6 w-6 text-foreground" />
+              <X className="h-6 w-6 text-white" />
             ) : (
-              <Menu className="h-6 w-6 text-foreground" />
+              <Menu className="h-6 w-6 text-white" />
             )}
           </button>
         </div>
@@ -82,7 +101,7 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background border-b border-border"
+            className="lg:hidden bg-[#0a1628]/98 backdrop-blur-md border-t border-white/10"
           >
             <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -93,24 +112,21 @@ export function Header() {
                   className={`text-base font-medium py-2 transition-colors ${
                     location.pathname === link.href
                       ? "text-accent"
-                      : "text-foreground"
+                      : "text-white/80"
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
-              <hr className="border-border" />
-              <a
-                href="tel:+14505551234"
-                className="flex items-center gap-2 text-foreground py-2"
+              <hr className="border-white/10" />
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white font-semibold"
+                asChild
               >
-                <Phone className="h-4 w-4" />
-                (450) 555-1234
-              </a>
-              <Button variant="hero" className="w-full" asChild>
-                <Link to="/estimation" onClick={() => setIsOpen(false)}>
-                  Estimation Gratuite
-                </Link>
+                <a href="tel:+15141234567" className="flex items-center justify-center gap-2">
+                  <Phone className="h-4 w-4" />
+                  URGENCE 24/7
+                </a>
               </Button>
             </nav>
           </motion.div>
