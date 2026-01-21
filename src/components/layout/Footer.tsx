@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-4">
-            <img src={logo} alt="Chevalier Couvreur" className="h-16 w-auto brightness-0 invert" />
+            <img src={logo} alt="Chevalier Couvreur" className="h-24 w-auto" />
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
               Service professionnel de toiture sur la Rive-Sud, Rive-Nord et Cantons-de-l'Est depuis plus de 20 ans.
             </p>

@@ -36,8 +36,22 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6"
           >
-            Toitures Résidentielles &{" "}
-            <span className="text-gradient">Commerciales de Confiance</span>
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-block"
+            >
+              Toitures Résidentielles &{" "}
+            </motion.span>
+            <motion.span 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.4, type: "spring", stiffness: 100 }}
+              className="inline-block text-gradient bg-gradient-to-r from-accent via-accent/80 to-accent bg-clip-text text-transparent"
+            >
+              Commerciales de Confiance
+            </motion.span>
           </motion.h1>
 
           <motion.p
