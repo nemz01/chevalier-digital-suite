@@ -28,7 +28,7 @@ const Services = () => {
       <Header />
       <main>
         {/* Hero */}
-        <section className="pt-32 pb-16 bg-primary text-primary-foreground">
+        <section className="pt-36 pb-16 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

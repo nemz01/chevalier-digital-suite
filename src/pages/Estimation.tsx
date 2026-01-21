@@ -249,7 +249,7 @@ const Estimation = () => {
     return (
       <div className="min-h-screen">
         <Header />
-        <main className="pt-32 pb-24">
+        <main className="pt-36 pb-24">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -387,7 +387,7 @@ const Estimation = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-32 pb-24">
+      <main className="pt-36 pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             {/* Progress Bar */}
@@ -687,7 +687,7 @@ const Estimation = () => {
                       Photos de Votre Toiture
                     </h1>
                     <p className="text-muted-foreground">
-                      Notre IA analysera vos photos pour une estimation précise.
+                      Téléchargez 3-5 photos pour une estimation plus précise.
                     </p>
                   </div>
 
@@ -738,25 +738,16 @@ const Estimation = () => {
                       </div>
                     )}
 
-                    <div className="mt-4 p-4 bg-accent/5 border border-accent/20 rounded-lg">
+                    <div className="mt-4 p-4 bg-muted/50 border border-border rounded-lg">
                       <div className="flex items-start gap-2">
-                        <Sparkles className="h-5 w-5 text-accent mt-0.5" />
+                        <Camera className="h-5 w-5 text-muted-foreground mt-0.5" />
                         <div>
-                          <p className="text-sm font-medium text-foreground mb-1">Analyse IA incluse</p>
+                          <p className="text-sm font-medium text-foreground mb-1">Conseils pour de meilleures photos</p>
                           <p className="text-sm text-muted-foreground">
-                            Notre IA analysera vos photos pour détecter le type de toiture, l'état, et les problèmes potentiels.
+                            Vue d'ensemble de la toiture, zones problématiques, et gouttières si applicable.
                           </p>
                         </div>
                       </div>
-                    </div>
-
-                    <div className="mt-4 p-4 bg-muted rounded-lg">
-                      <p className="text-sm font-medium text-foreground mb-2">Photos recommandées:</p>
-                      <ul className="text-sm text-muted-foreground space-y-1">
-                        <li>• Vue d'ensemble de la maison/bâtiment</li>
-                        <li>• Toiture de près (si accessible)</li>
-                        <li>• Zone problématique (si applicable)</li>
-                      </ul>
                     </div>
                   </div>
 
@@ -887,11 +878,11 @@ const Estimation = () => {
                       {isSubmitting ? (
                         <>
                           <Loader2 className="h-4 w-4 animate-spin" />
-                          Analyse IA en cours...
+                          Traitement en cours...
                         </>
                       ) : (
                         <>
-                          <Sparkles className="h-4 w-4" />
+                          <CheckCircle className="h-4 w-4" />
                           Obtenir Mon Estimation
                         </>
                       )}
