@@ -34,27 +34,24 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-7xl font-black text-primary-foreground leading-tight mb-6"
+            className="font-display text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-6 tracking-tight"
             style={{ 
-              textShadow: '3px 3px 0px rgba(0,0,0,0.3), 6px 6px 0px rgba(0,0,0,0.15), 9px 9px 20px rgba(0,0,0,0.2)'
+              textShadow: '2px 2px 0px rgba(0,0,0,0.2), 4px 4px 0px rgba(0,0,0,0.1), 8px 8px 30px rgba(0,0,0,0.3)'
             }}
           >
             <motion.span
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-block drop-shadow-lg"
+              className="block"
             >
-              Toitures Résidentielles &{" "}
+              Toitures Résidentielles &
             </motion.span>
             <motion.span 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.4, type: "spring", stiffness: 100 }}
-              className="inline-block text-accent"
-              style={{ 
-                textShadow: '3px 3px 0px rgba(0,153,255,0.4), 6px 6px 0px rgba(0,100,180,0.2), 9px 9px 25px rgba(0,0,0,0.3)'
-              }}
+              className="block italic"
             >
               Commerciales de Confiance
             </motion.span>
