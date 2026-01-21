@@ -6,7 +6,7 @@ import heroImage from "@/assets/hero-roofing.jpg";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-32">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -17,7 +17,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 pt-8">
+      <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -34,7 +34,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-6 tracking-tight"
+            className="font-display text-4xl md:text-6xl lg:text-8xl font-bold text-white leading-none mb-6 uppercase tracking-wide"
             style={{ 
               textShadow: '2px 2px 0px rgba(0,0,0,0.2), 4px 4px 0px rgba(0,0,0,0.1), 8px 8px 30px rgba(0,0,0,0.3)'
             }}
@@ -51,7 +51,7 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.4, type: "spring", stiffness: 100 }}
-              className="block italic"
+              className="block"
             >
               Commerciales de Confiance
             </motion.span>
